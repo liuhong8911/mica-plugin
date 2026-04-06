@@ -34,3 +34,14 @@ Then install:
 ```
 /plugin install mica
 ```
+
+## Setup
+
+1. Get an API key at **[mica.energy/app](https://mica.energy/app)**
+2. Set your key:
+
+```bash
+export MICA_API_KEY=mica_your_key_here
+```
+
+Or paste your key in chat and the plugin will prompt you to set it via `mica_set_api_key`.
