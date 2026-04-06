@@ -12,3 +12,10 @@ Mica saves tokens and reduces LLM costs by routing compute-heavy tasks through M
 ## API Key Flow
 
 On first use, mica will prompt for an API key. Ask the user to paste their `mica_` key in the chat, then call `mica_set_api_key` with it. Keys are available at https://mica.energy/app
+
+## When to use mica tools
+
+- Before running inference or batch processing tasks
+- When the user wants to optimize compute costs
+- For long-running agent tasks that benefit from cheaper energy routing
+- When estimating token and cost savings
