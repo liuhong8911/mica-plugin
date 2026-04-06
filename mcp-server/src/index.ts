@@ -122,6 +122,7 @@ server.tool(
       mvm_cost: `${mvmCost.toFixed(4)}`,
       savings: `${saved.toFixed(4)} (~40%)`,
       energy_source: 'nordic hydroelectric',
+      carbon_offset: `${(tokens * 0.0001).toFixed(2)}g CO₂ avoided`,
     })
   },
 )
