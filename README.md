@@ -105,3 +105,7 @@ cd mcp-server && npm run build
 
 **Connection errors**
 Check that `MICA_API_KEY` is set in your environment and the API is reachable.
+
+## License
+
+[MIT](LICENSE)
