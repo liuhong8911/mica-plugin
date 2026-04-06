@@ -10,6 +10,7 @@ triggers:
   - budget
   - optimize
   - cheaper
+  - reduce costs
 tools:
   - mica_estimate_savings
   - mica_node_status
