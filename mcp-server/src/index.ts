@@ -48,3 +48,13 @@ function text(msg: string) {
 function jsonResult(data: unknown) {
   return { content: [{ type: 'text' as const, text: JSON.stringify(data, null, 2) }] }
 }
+
+// ── Set API key ──
+// @ts-ignore
+server.tool('mica_set_api_key', { key: z.string() }, async ({ key }: { key: string }) => {
+  const trimmed = key.trim()
+  if (!trimmed.startsWith('mica_')) {
+    return text('Invalid key format. Mica keys start with mica_. Get yours at https://mica.energy/app')
+  }
+  return text('Key format accepted.')
+})
