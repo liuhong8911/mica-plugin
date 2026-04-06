@@ -28,3 +28,15 @@ async function validateKey(key: string): Promise<{ valid: boolean; plan?: string
     return { valid: false, error: `Could not reach mica API: ${(err as Error).message}` }
   }
 }
+
+function requireKey() {
+  if (!API_KEY) {
+    return {
+      content: [{
+        type: 'text' as const,
+        text: 'No API key detected. Ask the user to paste their mica API key, then call mica_set_api_key. Get a key at https://mica.energy/app',
+      }],
+    }
+  }
+  return null
+}
