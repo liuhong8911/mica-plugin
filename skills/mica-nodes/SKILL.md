@@ -23,3 +23,11 @@ Check the real-time status of MVM node clusters around the world — availabilit
 - User wants to know energy sources or carbon impact
 - Before routing compute to check current capacity
 - When troubleshooting routing issues
+
+## Required behavior
+
+1. Call `mica_node_status` to get current cluster info
+2. Present the data in a clear summary
+3. Recommend the best cluster based on cost and availability
+
+Requires `MICA_API_KEY` — set via `mica_set_api_key` or get a key at https://mica.energy/app
