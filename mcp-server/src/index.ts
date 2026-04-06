@@ -1,3 +1,14 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { z } from 'zod'
+
+const API_URL = (process.env.MICA_API_URL || 'https://mica-api-production-16e8.up.railway.app/api').replace(/\/$/, '')
+let API_KEY = process.env.MICA_API_KEY || ''
+let validated = false
+let currentPlan = ''
+
+const server = new McpServer({
+  name: 'mica',
+  version: '1.0.0',
+  description: 'Save tokens and cut inference costs by routing compute through MVM nodes on the cheapest available energy.',
+})
