@@ -9,7 +9,6 @@ triggers:
   - region
   - status
   - availability
-  - capacity
 tools:
   - mica_node_status
 ---
