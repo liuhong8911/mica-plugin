@@ -26,7 +26,7 @@ Mica runs as an MCP server plugin for Claude Code. When your agent needs to run 
 ### Claude Code Plugin
 
 ```
-/plugin marketplace add mica-energy/mica-plugin
+/plugin marketplace add nhevers/mica-plugin
 ```
 
 Then install:

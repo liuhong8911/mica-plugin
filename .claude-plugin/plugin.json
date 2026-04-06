@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Save tokens and cut inference costs by routing compute through MVM nodes on the cheapest available energy.",
   "author": {
-    "name": "mica-energy",
-    "url": "https://github.com/mica-energy"
+    "name": "nhevers",
+    "url": "https://github.com/nhevers"
   },
   "repository": "https://github.com/nhevers/mica-plugin",
   "homepage": "https://mica.energy",
