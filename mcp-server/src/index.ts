@@ -126,3 +126,15 @@ server.tool(
     })
   },
 )
+
+// ── Node status ──
+// @ts-ignore
+server.tool(
+  'mica_node_status',
+  'Check the current status of MVM node clusters, including availability, energy costs, and load.',
+  {},
+  async () => {
+    const guard = requireKey()
+    if (guard) return guard
+  },
+)
