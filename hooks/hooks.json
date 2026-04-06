@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node -e \"process.stdout.write(require('fs').readFileSync(require('path').join('${CLAUDE_PLUGIN_ROOT}','ascii-banner.txt'),'utf8'))\""
+            "command": "node -e \"process.stdout.write(require('fs').readFileSync(require('path').resolve('${CLAUDE_PLUGIN_ROOT}','ascii-banner.txt'),'utf8'))\""
           }
         ]
       }
