@@ -65,3 +65,19 @@ mica_estimate_savings({ tokens: 50000, model: "claude-3.5-sonnet" })
 mica_node_status()
 mica_check_job({ job_id: "mvm_abc123" })
 ```
+
+## How It Works
+
+```
+Agent has a compute task
+        ↓
+mica_estimate_savings shows ~40% savings
+        ↓
+mica_route_compute sends job to MVM
+        ↓
+MVM routes to cheapest energy node
+        ↓
+Job runs on Nordic hydro / Icelandic geothermal
+        ↓
+Results returned, tokens saved
+```
