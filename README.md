@@ -45,3 +45,13 @@ export MICA_API_KEY=mica_your_key_here
 ```
 
 Or paste your key in chat and the plugin will prompt you to set it via `mica_set_api_key`.
+
+## Tools
+
+| Tool | What it does |
+|------|-------------|
+| `mica_set_api_key` | Set your mica API key at runtime |
+| `mica_route_compute` | Route a compute job through MVM nodes |
+| `mica_estimate_savings` | Estimate token and cost savings vs standard cloud |
+| `mica_node_status` | Check MVM node clusters, energy costs, and load |
+| `mica_check_job` | Check the status of a submitted compute job |
