@@ -20,3 +20,17 @@ LLM inference is expensive. Running agents 24/7 burns tokens and energy. Mica fi
 Instead of paying full price for cloud compute at $0.10+/kWh, MVM routes your workloads to nodes running on Nordic hydroelectric ($0.02/kWh), Icelandic geothermal ($0.01/kWh), and Canadian hydro ($0.04/kWh). Same results, ~40% lower cost.
 
 Mica runs as an MCP server plugin for Claude Code. When your agent needs to run inference, batch processing, or long-running tasks, it routes through MVM instead of standard cloud — saving tokens and money automatically.
+
+## Install
+
+### Claude Code Plugin
+
+```
+/plugin marketplace add mica-energy/mica-plugin
+```
+
+Then install:
+
+```
+/plugin install mica
+```
