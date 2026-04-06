@@ -56,5 +56,14 @@ server.tool('mica_set_api_key', { key: z.string() }, async ({ key }: { key: stri
   if (!trimmed.startsWith('mica_')) {
     return text('Invalid key format. Mica keys start with mica_. Get yours at https://mica.energy/app')
   }
-  return text('Key format accepted.')
+
+  const result = await validateKey(trimmed)
+  if (!result.valid) {
+    return text(`Key validation failed: ${result.error || 'Key not found or revoked'}. Check your key at https://mica.energy/app`)
+  }
+
+  API_KEY = trimmed
+  validated = true
+  currentPlan = result.plan || 'basic'
+  return text(`API key validated. Plan: ${currentPlan}. Mica MVM is ready — your compute will be routed through low-cost energy nodes.`)
 })
