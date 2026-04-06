@@ -6,7 +6,7 @@
     "name": "mica-energy",
     "url": "https://github.com/mica-energy"
   },
-  "repository": "https://github.com/mica-energy/mica-plugin",
+  "repository": "https://github.com/nhevers/mica-plugin",
   "homepage": "https://mica.energy",
   "license": "MIT",
   "skills": "./skills/",
