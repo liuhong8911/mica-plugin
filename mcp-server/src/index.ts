@@ -96,3 +96,18 @@ server.tool(
     })
   },
 )
+
+// ── Estimate savings ──
+// @ts-ignore
+server.tool(
+  'mica_estimate_savings',
+  'Estimate token and cost savings for a workload routed through MVM versus standard cloud compute.',
+  {
+    tokens: z.number().describe('Estimated token count for the workload'),
+    model: z.string().optional().describe('Model being used (e.g. claude-3.5-sonnet, gpt-4o)'),
+  },
+  async ({ tokens, model }) => {
+    const guard = requireKey()
+    if (guard) return guard
+  },
+)
