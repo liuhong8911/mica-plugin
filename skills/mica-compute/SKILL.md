@@ -10,7 +10,6 @@ triggers:
   - run model
   - process data
   - long-running
-  - agent task
 tools:
   - mica_route_compute
   - mica_estimate_savings
