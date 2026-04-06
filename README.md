@@ -55,3 +55,13 @@ Or paste your key in chat and the plugin will prompt you to set it via `mica_set
 | `mica_estimate_savings` | Estimate token and cost savings vs standard cloud |
 | `mica_node_status` | Check MVM node clusters, energy costs, and load |
 | `mica_check_job` | Check the status of a submitted compute job |
+
+### Example calls
+
+```typescript
+mica_set_api_key({ key: "mica_abc123..." })
+mica_route_compute({ task: "batch inference on 10k samples", priority: "normal" })
+mica_estimate_savings({ tokens: 50000, model: "claude-3.5-sonnet" })
+mica_node_status()
+mica_check_job({ job_id: "mvm_abc123" })
+```
