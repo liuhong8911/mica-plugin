@@ -186,3 +186,7 @@ async function main() {
   const transport = new StdioServerTransport()
   await server.connect(transport)
 }
+main().catch((err) => {
+  console.error('Failed to start mica MCP server:', err)
+  process.exit(1)
+})
