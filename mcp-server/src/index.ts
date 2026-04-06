@@ -14,13 +14,17 @@ const server = new McpServer({
 })
 
 async function validateKey(key: string): Promise<{ valid: boolean; plan?: string; error?: string }> {
-  const res = await fetch(`${API_URL}/keys/validate`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'User-Agent': 'mica-mcp/1.0.0' },
-    body: JSON.stringify({ key }),
-  })
-  if (!res.ok) {
-    return { valid: false, error: `API returned ${res.status}` }
+  try {
+    const res = await fetch(`${API_URL}/keys/validate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'User-Agent': 'mica-mcp/1.0.0' },
+      body: JSON.stringify({ key }),
+    })
+    if (!res.ok) {
+      return { valid: false, error: `API returned ${res.status}` }
+    }
+    return await res.json()
+  } catch (err) {
+    return { valid: false, error: `Could not reach mica API: ${(err as Error).message}` }
   }
-  return await res.json()
 }
