@@ -67,3 +67,19 @@ server.tool('mica_set_api_key', { key: z.string() }, async ({ key }: { key: stri
   currentPlan = result.plan || 'basic'
   return text(`API key validated. Plan: ${currentPlan}. Mica MVM is ready — your compute will be routed through low-cost energy nodes.`)
 })
+
+// ── Route compute ──
+// @ts-ignore
+server.tool(
+  'mica_route_compute',
+  'Route a compute-heavy task through MVM nodes running on cheap renewable energy. Saves tokens by offloading inference, batch processing, and long-running jobs to distributed nodes.',
+  {
+    task: z.string().describe('Description of the compute task to route'),
+    priority: z.enum(['low', 'normal', 'high']).optional().describe('Job priority (affects node selection)'),
+    model: z.string().optional().describe('Target model for inference tasks'),
+  },
+  async ({ task, priority, model }) => {
+    const guard = requireKey()
+    if (guard) return guard
+  },
+)
