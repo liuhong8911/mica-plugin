@@ -149,3 +149,17 @@ server.tool(
     })
   },
 )
+
+// ── Check job status ──
+// @ts-ignore
+server.tool(
+  'mica_check_job',
+  'Check the status of a previously submitted MVM compute job.',
+  {
+    job_id: z.string().describe('The job ID returned by mica_route_compute'),
+  },
+  async ({ job_id }) => {
+    const guard = requireKey()
+    if (guard) return guard
+  },
+)
