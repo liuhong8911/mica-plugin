@@ -81,3 +81,13 @@ Job runs on Nordic hydro / Icelandic geothermal
         ↓
 Results returned, tokens saved
 ```
+
+## Pricing
+
+Subscribe at **[mica.energy/app](https://mica.energy/app)**. Payment in USDC (Base), ETH, or SOL.
+
+| Plan | Price | Compute |
+|------|-------|---------|
+| Basic | $20/mo | 500K tokens/mo routed |
+| Premium | $75/mo | Unlimited routing |
+| Enterprise | Contact us | Custom SLA + dedicated nodes |
