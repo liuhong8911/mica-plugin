@@ -12,3 +12,14 @@ triggers:
 tools:
   - mica_node_status
 ---
+
+# MVM Node Status
+
+Check the real-time status of MVM node clusters around the world — availability, energy source, cost per kWh, and current load.
+
+## When to activate
+
+- User asks about node availability or regions
+- User wants to know energy sources or carbon impact
+- Before routing compute to check current capacity
+- When troubleshooting routing issues
