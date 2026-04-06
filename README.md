@@ -91,3 +91,17 @@ Subscribe at **[mica.energy/app](https://mica.energy/app)**. Payment in USDC (Ba
 | Basic | $20/mo | 500K tokens/mo routed |
 | Premium | $75/mo | Unlimited routing |
 | Enterprise | Contact us | Custom SLA + dedicated nodes |
+
+## Troubleshooting
+
+**API key not working**
+Make sure your subscription is active at [mica.energy/app](https://mica.energy/app).
+
+**Tools not appearing**
+Rebuild the MCP server:
+```bash
+cd mcp-server && npm run build
+```
+
+**Connection errors**
+Check that `MICA_API_KEY` is set in your environment and the API is reachable.
