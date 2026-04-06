@@ -173,3 +173,16 @@ server.tool(
     })
   },
 )
+
+async function main() {
+  if (API_KEY) {
+    const result = await validateKey(API_KEY)
+    if (result.valid) {
+      validated = true
+      currentPlan = result.plan || 'basic'
+    }
+  }
+
+  const transport = new StdioServerTransport()
+  await server.connect(transport)
+}
