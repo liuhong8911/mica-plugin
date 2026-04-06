@@ -118,9 +118,9 @@ server.tool(
     return jsonResult({
       tokens,
       model: model || 'auto',
-      standard_cost: `${standardCost.toFixed(4)}`,
-      mvm_cost: `${mvmCost.toFixed(4)}`,
-      savings: `${saved.toFixed(4)} (~40%)`,
+      standard_cost: `$${standardCost.toFixed(4)}`,
+      mvm_cost: `$${mvmCost.toFixed(4)}`,
+      savings: `$${saved.toFixed(4)} (~40%)`,
       energy_source: 'nordic hydroelectric',
       carbon_offset: `${(tokens * 0.0001).toFixed(2)}g CO₂ avoided`,
     })
@@ -169,7 +169,7 @@ server.tool(
       energy_source: 'hydroelectric',
       duration_ms: Math.floor(Math.random() * 3000) + 500,
       tokens_processed: Math.floor(Math.random() * 50000) + 1000,
-      cost_saved: `${(Math.random() * 0.5).toFixed(4)}`,
+      cost_saved: `$${(Math.random() * 0.5).toFixed(4)}`,
     })
   },
 )
@@ -186,6 +186,7 @@ async function main() {
   const transport = new StdioServerTransport()
   await server.connect(transport)
 }
+
 main().catch((err) => {
   console.error('Failed to start mica MCP server:', err)
   process.exit(1)
