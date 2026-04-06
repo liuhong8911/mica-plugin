@@ -40,3 +40,7 @@ function requireKey() {
   }
   return null
 }
+
+function text(msg: string) {
+  return { content: [{ type: 'text' as const, text: msg }] }
+}
