@@ -109,5 +109,19 @@ server.tool(
   async ({ tokens, model }) => {
     const guard = requireKey()
     if (guard) return guard
+
+    const standardCostPer1k = model?.includes('gpt-4') ? 0.03 : model?.includes('claude') ? 0.015 : 0.01
+    const standardCost = (tokens / 1000) * standardCostPer1k
+    const mvmCost = standardCost * 0.6
+    const saved = standardCost - mvmCost
+
+    return jsonResult({
+      tokens,
+      model: model || 'auto',
+      standard_cost: `${standardCost.toFixed(4)}`,
+      mvm_cost: `${mvmCost.toFixed(4)}`,
+      savings: `${saved.toFixed(4)} (~40%)`,
+      energy_source: 'nordic hydroelectric',
+    })
   },
 )
