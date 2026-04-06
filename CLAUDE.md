@@ -8,3 +8,7 @@ Mica saves tokens and reduces LLM costs by routing compute-heavy tasks through M
 2. To route a compute job: use `mica_route_compute` (MCP tool from mica server)
 3. To estimate savings: use `mica_estimate_savings` (MCP tool from mica server)
 4. To check node status: use `mica_node_status` (MCP tool from mica server)
+
+## API Key Flow
+
+On first use, mica will prompt for an API key. Ask the user to paste their `mica_` key in the chat, then call `mica_set_api_key` with it. Keys are available at https://mica.energy/app
