@@ -12,3 +12,15 @@ const server = new McpServer({
   version: '1.0.0',
   description: 'Save tokens and cut inference costs by routing compute through MVM nodes on the cheapest available energy.',
 })
+
+async function validateKey(key: string): Promise<{ valid: boolean; plan?: string; error?: string }> {
+  const res = await fetch(`${API_URL}/keys/validate`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'User-Agent': 'mica-mcp/1.0.0' },
+    body: JSON.stringify({ key }),
+  })
+  if (!res.ok) {
+    return { valid: false, error: `API returned ${res.status}` }
+  }
+  return await res.json()
+}
