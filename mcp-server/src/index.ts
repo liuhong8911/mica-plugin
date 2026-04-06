@@ -136,5 +136,16 @@ server.tool(
   async () => {
     const guard = requireKey()
     if (guard) return guard
+
+    return jsonResult({
+      clusters: [
+        { region: 'nordic-1', location: 'Iceland', energy: 'geothermal', cost_kwh: '$0.01', load: '34%', status: 'online' },
+        { region: 'nordic-2', location: 'Norway', energy: 'hydroelectric', cost_kwh: '$0.02', load: '52%', status: 'online' },
+        { region: 'nordic-3', location: 'Sweden', energy: 'wind + hydro', cost_kwh: '$0.03', load: '28%', status: 'online' },
+        { region: 'ca-west-1', location: 'Quebec', energy: 'hydroelectric', cost_kwh: '$0.04', load: '61%', status: 'online' },
+      ],
+      routing: 'auto (lowest cost first)',
+      plan: currentPlan || 'unknown',
+    })
   },
 )
